@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>평가리스트</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+  </head>
+  <body onload="list_eval(get_eval());">
+    <div id="obj">
+      <label for="question_1" class="radio_inline">#01.성향일치
+        <input readonly name="answer_1" id="score_1"> </label>점</br></br>
+      <label for="question_2" class="radio_inline">#02.소통
+        <input readonly name="answer_2" id="score_2"> </label>점</br></br>
+      <label for="question_3" class="radio_inline">#03.가사분담
+        <input readonly name="answer_3" id="score_3"> </label>점</br></br>
+      <label for="question_3" class="radio_inline">#04.추천
+        <input readonly name="answer_4" id="score_4"> </label>점</br></br>
+      <label for="question_3" class="radio_inline">*총점*
+        <input readonly name="all" id="all"> </label>점</br></br>
+ <!-- 나중에 별점처럼 별모양으로 하면되지않을까 난 별이 좋아 ☆-->
+    </div>
+    <div id = "list_div">
+      <table class="sub" id="sub_table">
+        <thead>
+        <tr>
+          <th>아이디</th>
+          <th>평가</th>
+        </tr>
+        </thead>
+      <tbody id="sub_tbody">
+
+      </tbody>
+      </table>
+    </div>
+
+<script type="text/javascript" src="/javascripts/customer.js"></script>
+  <script type="text/javascript" src="/javascripts/evaluation.js"></script>
+  </body>
+</html>

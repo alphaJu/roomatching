@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>성향수정</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <!-- <script src="/js/jquery.min.js"></script> -->
+    <!-- <script src="/js/bootstrap.min.js"></script> -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700" rel="stylesheet"> -->
+
+   <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/jejugothic.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/nanumpenscript.css">
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/magnific-popup.css">
+    <!--For Plugins external css-->
+    <link rel="stylesheet" href="/stylesheets/plugins.css" />
+    <!--Theme custom css -->
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <!--Theme Responsive css-->
+    <link rel="stylesheet" href="/stylesheets/responsive.css" />
+    <script src="/javascripts/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
+    <script src="/javascripts/vendor/jquery-1.11.2.min.js"></script>
+    <script src="/javascripts/vendor/bootstrap.min.js"></script>
+
+    <script src="/javascripts/jquery.magnific-popup.js"></script>
+    <script src="/javascripts/jquery.mixitup.min.js"></script>
+    <script src="/javascripts/jquery.easing.1.3.js"></script>
+    <script src="/javascripts/jquery.masonry.min.js"></script>
+    <script src="/javascripts/plugins.js"></script>
+    <script src="/javascripts/main.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+  </head>
+  <body data-spy="scroll" data-target=".navbar" data-offset="200">
+    <div class="culmn">
+                <header id="main_menu" class="header navbar-fixed-top">
+                    <div class="main_menu_bg">
+                        <div class="container">
+                            <div class="row">
+                                <div class="nave_menu">
+                                    <nav class="navbar navbar-default">
+                                        <div class="container-fluid">
+                                            <!-- Brand and toggle get grouped for better mobile display -->
+                                            <div class="navbar-header">
+                                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                                    <span class="sr-only">Toggle navigation</span>
+                                                    <span class="icon-bar"></span>
+                                                    <span class="icon-bar"></span>
+                                                    <span class="icon-bar"></span>
+                                                </button>
+                                                <a class="navbar-brand" href="/index">
+                                                    <img src="/images2/real.png"/>
+                                                </a>
+                                            </div>
+                                            <!-- Collect the nav links, forms, and other content for toggling -->
+                                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                                <ul class="nav navbar-nav navbar-right">
+                                                    <li><a href="/">HOME</a></li>
+                                                    <li><a href="/customer/logout">LOGOUT</a></li>
+                                                </ul>
+                                            </div>
+
+                                        </div>
+                                    </nav>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </header> <!--End of header -->
+            <div class="headerbg"></div><!--헤더 흰색배경-->
+
+
+    <section id="about" class="about">
+      <div class="mintbg1">
+          <div class="container">
+                          <div class="row">
+                              <div class="main_about_area sections">
+                                  <div class="col-sm-12">
+                                      <div class="main_about_content">
+                                          <div class="row">
+                                            <div class="head_title">
+                                                      <h3 style="color:white;" class="whitetitle">성향 수정하기</h3>
+                                                <div class="separator"></div>
+                                            </div>
+
+      <div class="darkmintbg2">
+<p class="whitetitle" id='title'></p>
+        <form class="info_form" name="info_form" method="POST">
+          <div class="row">
+            <div class="column">
+
+        <div class="single_about">
+          <div class="single_ab_icon">
+            <div class="ab_border_right"></div>
+            <i class="fa fa-clock-o"></i>
+          </div>
+          <div class="single_ab_text">
+
+        <h3 style="color:white;" class="jg"> 기상 시간</h3>
+        <p>
+            <input type="hidden" id="select"/>
+        <select name="awake_time" id="awake_time">
+          <option value="-1">기상시간을 선택해 주세요</option>
+          <option value='1'>5:00 이전</option>";
+          <option value='2'>5:00~6:00</option>";
+          <option value='3'>6:00~7:00</option>";
+          <option value='4'>7:00~8:00</option>";
+          <option value='5'>8:00~9:00</option>";
+          <option value='6'>9:00~10:00</option>";
+          <option value='7'>10:00~11:00</option>";
+          <option value='8'>11:00~12:00</option>";
+          <option value='9'>12:00 이후</option>";
+        </select>
+      </p>      </div>
+        </div>
+        <div class="single_about">
+          <div class="single_ab_icon">
+            <div class="ab_border_right"></div>
+            <i class="fa fa-clock-o"></i>
+          </div>
+          <div class="single_ab_text">
+              <h3 style="color:white;" class="jg"> 취침 시간</h3>
+              <p>
+        <select name="sleep_time" id="sleep_time">
+          <option value="-1">취침시간을 선택해 주세요</option>
+          <option value='1'>21:00 이전</option>";
+          <option value='2'>21:00~22:00</option>";
+          <option value='3'>22:00~23:00</option>";
+          <option value='4'>23:00~24:00</option>";
+          <option value='5'>24:00 이후</option>";
+        </select></p>
+      </div>
+  </div>
+  <div class="single_about">
+    <div class="single_ab_icon">
+      <div class="ab_border_right"></div>
+      <i class="fa fa-bed"></i>
+    </div>
+    <div class="single_ab_text">
+        <h3 style="color:white;" class="jg"> 잠버릇이 있나요?</h3>
+        <p>
+        <select name="habit" id="habit">
+          <option value="-1">잠버릇을 선택해 주세요</option>
+          <option value='1'>몸부림</option>";
+          <option value='2'>코골이</option>";
+          <option value='3'>이갈이</option>";
+          <option value='4'>잠꼬대</option>";
+          <option value='5'>몽유병</option>";
+          <option value='6'>기타</option>";
+          <option value='7'>없음</option>";
+        </select></p>
+      </div>  </div></div>
+      <div class="column">
+
+        <div class="single_about">
+          <div class="single_ab_icon">
+            <div class="ab_border_right"></div>
+            <i class="fa fa-book"></i>
+          </div>
+          <div class="single_ab_text">
+        <h3 style="color:white;" class="jg">학적상태를 말해주세요</h3>
+        <p>
+        <select name="status" id="status">
+          <option value='-1' selected>선택해주세요</option>";
+          <option value='1'>휴학생</option>";
+          <option value='2'>재학생</option>";
+          <option value='3'>졸업생</option>";
+        </select></p>
+      </div>  </div>
+      <div class="single_about">
+        <div class="single_ab_icon">
+          <div class="ab_border_right"></div>
+          <i class="fa fa-beer"></i>
+        </div>
+        <div class="single_ab_text">
+        <h3 style="color:white;" class="jg">술을 얼마나 마시나요?</h3>
+        <p>
+        <select name="apw" id="apw">
+          <option value='-1' selected>선택해주세요</option>";
+          <option value='1'>한달에 한번</option>";
+          <option value='2'>한달에 두번 </option>";
+          <option value='3'>일주일에 한번  </option>";
+          <option value='4'>일주일에 두세번 </option>";
+          <option value='5'>일주일에 네번 이상</option>";
+        </select></p>
+      </div>  </div>
+      <div class="single_about">
+        <div class="single_ab_icon">
+          <div class="ab_border_right"></div>
+          <i class="fa fa-fire"></i>
+        </div>
+        <div class="single_ab_text">
+        <h3 style="color:white;" class="jg">흡연자이신가요?</h3>
+        <p>
+            <div class="basictext">
+              <input type="radio" name="smoking" id="smoking_yes" value="1"/>
+              <label for="smoking_yes" style="color: #b0c1c1;"><span></span>예</label></br>
+              <input  type="radio" name="smoking" id="smoking_no" value="0" checked/>
+              <label for="smoking_no" style="color: #b0c1c1;"><span></span>아니오</label>
+            </div>
+          </p>
+      </div>  </div></div>
+    </div>
+    <div class="single_about">
+      <div class="single_ab_icon">
+        <div class="ab_border_right"></div>
+        <i class="fa fa-search-plus"></i>
+      </div>
+      <div class="single_ab_text">
+        <h3 style="color:white;" class="jg">기타 특이사항을 적어주세요</h3>
+        <p>
+          <textarea id="etc" class="form-control" rows="10" cols="100" placeholder="ex. 집에 잘 들어가지 않아요"></textarea>
+      </p></div>  </div>
+      <div class="single_about">
+        <div class="single_ab_icon">
+          <div class="ab_border_right"></div>
+          <i class="fa fa-home"></i>
+        </div>
+        <div class="single_ab_text">
+        <h3 style="color:white;" class="jg">거주할 집이 이미 있나요?</h3>
+        <p>
+          <div class="basictext">
+            <input type="radio" name="house_exist" id="house_exist_yes" value="1"/>
+            <label for="house_exist_yes" style="color: #b0c1c1;"><span></span>예&nbsp</label>
+            <input  type="radio" name="house_exist" id="house_exist_no" value="0" checked/>
+            <label for="house_exist_no" style="color: #b0c1c1;"><span></span>아니오</label>
+          </div></br></br>
+
+        <h4 class="jg">※아래부터는 집이 있으신 분들만 작성해주세요</h4>
+        <div class="img">
+        <p class="basictext2">1. 집의 내부 사진을 올려주세요</p>
+        <!-- <img id="image"/>
+        <input type="file" onchange="onFileChange()"/>
+          <textarea id="house_img" style="width:20%; height:120px; word-break:break-all;"></textarea> -->
+        <p><img id="img" src="" style="width:256px; height:192px;" /></p>
+        <p><input type='file' id="baseFile"/></p>
+        <textarea style="display:none;" id="house_img" style="width:20%; height:120px; word-break:break-all;"></textarea>
+        <!-- <div id="house_img" style="width:100%; height:600px; word-break:break-all;"></div> -->
+      </div>
+        <p class="basictext2">2. 집의 주소를 알려주세요</p>
+        <input type="text" name="house_loc" id="house_loc" style="width:300px; height:30px;">
+        <p class="basictext2">#위치를 확인해보세요!</p>
+        <div class="serach">
+          <input id="address" type="text" value="안암로 145" name="address" style="width:200px; height:20px; padding:2px; margin:0px 0px 6px 0px;" />
+          <input type="button" id="submit" onclick="geocoder.addressSearch(address.value, search);" value="주소검색"/>
+        </div>
+        <div id="map" style="width:100%;height:450px;"></div></p>
+
+      </div>
+  </div>
+  </div>
+  <p id="mod"></p>
+
+    <p align='center'><button type="submit" class="btn btn-primary" id="add" onclick="modify_info(get_info2())">수정</button></p>
+
+        </form>
+      </div>
+    </div>
+    </div>
+
+    </div>
+    </div>
+
+    </div>
+    </div>
+    </section>
+    <section class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="main_footer">
+                        <div class="row">
+
+                            <div class="col-sm-6 col-xs-12">
+                                <div class="copyright_text">
+                                    <p style="font-size:15px;" class=" wow fadeInRight" data-wow-duration="1s">Made with <i class="fa fa-heart"></i> by  Snoopy Yeju_☆</p>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-xs-12">
+                                <div class="flowus">
+                                    <img src="/images2/snoopyface.png"/>
+                                    <img src="/images2/snoopyface2.png"/>
+                                    <img src="/images2/snoopyface3.png"/>
+                                    <img src="/images2/snoopyface4.png"/>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+</div>
+
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=56c43e3d76bb74ed7b7e1317e983c018&libraries=services"></script>
+    <script>
+    //////////////////////////////////
+//
+// function binaryStringToArrayBuffer(binary) {
+//     var length = binary.length;
+//     var buf = new ArrayBuffer(length);
+//     var arr = new Uint8Array(buf);
+//     for(var i=0;i<length;i++) {
+//         arr[i] = binary.charCodeAt(i);
+//     }
+//     return buf;
+// }
+//
+// function base64StringToBlob(base64) {
+//     var type = base64.match(/data:([^;]+)/)[1];
+//     base64 = base64.replace(/^[^,]+,/g, '');
+//     var options = {};
+//     if (type) {
+//         options.type = type;
+//     }
+//     var binaryArrayBuffer = [ binaryStringToArrayBuffer(window.atob(base64)) ];
+//     return new Blob(binaryArrayBuffer, options);
+// }
+//
+// function onFileChange() {
+//     var preview = document.querySelector('img');
+//     var file    = document.querySelector('input[type=file]').files[0];
+//     var reader  = new FileReader();
+//
+//     reader.addEventListener("load", function (e) {
+//         var base64 = e.target.result;
+//
+//         /* BASE64 STRING IMAGE BINDING */
+//         //preview.src = base64;
+//
+//         /* BLOB URL IMAGE BINDING */
+//         preview.src = window.URL.createObjectURL(base64StringToBlob(base64));
+//          document.info_form.house_img.value=preview.src;
+//          console.log(document.info_form.house_img.value);
+//     }, false);
+//
+//     if (file) {
+//         reader.readAsDataURL(file);
+//     }
+// }
+    /////////////이미지 script////////////////////////
+
+    function readImage(input) {
+      var result;
+      if ( input.files && input.files[0] ) {
+         var FR= new FileReader();
+         FR.onload = function(e) {
+           $('#img').attr( "src", e.target.result );
+           console.log(e.target.result);
+           $('#house_img').text( e.target.result );
+           result=e.target.result;
+           document.info_form.house_img.value=e.target.result;
+
+           return result;
+         };
+         FR.readAsDataURL( input.files[0] );
+      }
+
+
+    }
+
+// $(document).ready(function(){
+    $("#baseFile").change(function(){
+       readImage( this );
+    });
+
+    $("#baseFile").trigger("change");
+
+//   });
+
+          ////////////지도 script//////////////////////////
+    var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+        mapOption = {
+            center: new daum.maps.LatLng(37.5900122, 127.0318318), // 지도의 중심좌표
+            level: 4 // 지도의 확대 레벨
+        };
+
+    // 지도를 생성합니다
+    var map = new daum.maps.Map(mapContainer, mapOption);
+    var position=new daum.maps.LatLng(37.5900122, 127.0318318);
+
+    // var marker = new daum.maps.Marker({
+    //           position: position, // 마커의 좌표
+    //           draggable : true, // 마커를 드래그 가능하도록 설정한다
+    //           map: map // 마커를 표시할 지도 객체
+    //       });
+    // 주소-좌표 변환 객체를 생성합니다
+    var geocoder = new daum.maps.services.Geocoder();
+    // 지도 타입 변경 컨트롤을 생성한다
+    var mapTypeControl = new daum.maps.MapTypeControl();
+
+          // 지도의 상단 우측에 지도 타입 변경 컨트롤을 추가한다
+    map.addControl(mapTypeControl, daum.maps.ControlPosition.TOPRIGHT);
+
+          // 지도에 확대 축소 컨트롤을 생성한다
+    var zoomControl = new daum.maps.ZoomControl();
+
+          // 지도의 우측에 확대 축소 컨트롤을 추가한다
+    map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
+
+    // 주소로 좌표를 검색합니다
+    var search=function(result, status) {
+
+        // 정상적으로 검색이 완료됐으면
+         if (status === daum.maps.services.Status.OK) {
+
+            var coords = new daum.maps.LatLng(result[0].y, result[0].x);
+
+            // 결과값으로 받은 위치를 마커로 표시합니다
+            var marker = new daum.maps.Marker({
+                map: map,
+                draggable : true,
+                position: coords
+            });
+            position=coords;
+
+            // 인포윈도우로 장소에 대한 설명을 표시합니다
+            var infowindow = new daum.maps.InfoWindow({
+                content: '<div style="width:150px;text-align:center;padding:6px 0;">House</div>'
+            });
+            infowindow.open(map, marker);
+
+            // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+            map.setCenter(coords);
+        }};
+
+
+    </script>
+    <script src="/javascripts/roommatching.js"></script>
+    <script type="text/javascript" src="/javascripts/customer.js"></script>
+    <script type="text/javascript" src="/javascripts/information.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+        <title>Matching List</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Google Font link-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700" rel="stylesheet">
+
+        <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/nanumpenscript.css">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/jejugothic.css">
+
+        <link rel="stylesheet" href="stylesheets/font-awesome.min.css">
+        <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+        <link rel="stylesheet" href="stylesheets/magnific-popup.css">
+        <!--For Plugins external css-->
+        <link rel="stylesheet" href="stylesheets/plugins.css" />
+        <!--Theme custom css -->
+        <link rel="stylesheet" href="stylesheets/style.css">
+        <!--Theme Responsive css-->
+        <link rel="stylesheet" href="stylesheets/responsive.css" />
+        <script src="javascripts/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
+        <script src="javascripts/vendor/jquery-1.11.2.min.js"></script>
+        <script src="javascripts/vendor/bootstrap.min.js"></script>
+
+        <script src="javascripts/jquery.magnific-popup.js"></script>
+        <script src="javascripts/jquery.mixitup.min.js"></script>
+        <script src="javascripts/jquery.easing.1.3.js"></script>
+        <script src="javascripts/jquery.masonry.min.js"></script>
+        <script src="javascripts/plugins.js"></script>
+        <script src="javascripts/main.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  </head>
+  <body data-spy="scroll" data-target=".navbar" data-offset="200">
+
+    <div class="culmn">
+                <header id="main_menu" class="header navbar-fixed-top">
+                    <div class="main_menu_bg">
+                        <div class="container">
+                            <div class="row">
+                                <div class="nave_menu">
+                                    <nav class="navbar navbar-default">
+                                        <div class="container-fluid">
+                                            <!-- Brand and toggle get grouped for better mobile display -->
+                                            <div class="navbar-header">
+                                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                                    <span class="sr-only">Toggle navigation</span>
+                                                    <span class="icon-bar"></span>
+                                                    <span class="icon-bar"></span>
+                                                    <span class="icon-bar"></span>
+                                                </button>
+                                                <a class="navbar-brand" href="/index">
+                                                    <img src="images2/real.png"/>
+                                                </a>
+                                            </div>
+                                            <!-- Collect the nav links, forms, and other content for toggling -->
+                                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                                <ul class="nav navbar-nav navbar-right">
+                                                    <li><a href="/index">HOME</a></li>
+                                                    <li><a href="/customer/logout">LOGOUT</a></li>
+
+                                                </ul>
+                                            </div>
+
+                                        </div>
+                                    </nav>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </header> <!--End of header -->
+                  <div class="headerbg"></div><!--헤더 흰색배경-->
+
+                  <section id="testimonial" class="testimonial">
+                    <div class="video_overlay">
+                        <div class="container">
+                            <div class="row">
+                                <div class="main_testimonial sections text-center">
+                                    <div class="col-md-12" data-wow-delay="0.2s">
+                                        <i class="fa fa-quote-left" style="font-size:32px;"></i>
+                                        <p class="whitetitle"><br>현재 매칭 상황</p>
+                                        <i class="fa fa-quote-right" style="font-size:32px;"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </section>
+
+                  <section id="service" class="service">
+                    <div class="mintbg">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-sm-12">
+                            <div class="main_service_area">
+                              <div class="main_service_content">
+                                <div class="service_tabe">
+                                  <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active" id="webdesign">
+                                      <div class="single_service_tab">
+                                        <div class="row">
+                                          <div class="single_tab_content">
+                                            <div class="head_title2">
+                                              <h3 style="color:white;" class="whitetitle">요청 받은 매칭</h3>
+                                              <div class="separator"></div>
+                                            </div>
+                                            <div class="darkmintbg3">
+                                              <div class="table-responsive">
+                                                <table  class="table table-hover thead-light">
+                                                  <thead>
+                                                  <tr>
+                                                    <th>보낸 사람</th>
+                                                    <th>보낸 시간</th>
+                                                    <th></th> <!-- 수락 -->
+                                                    <th></th> <!-- 거절 -->
+                                                  </tr>
+                                                </thead>
+                                                <tbody id="received_matching"></tbody>
+                                                </table>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="single_tab_content">
+                                            <div class="head_title2">
+                                              <h3 style="color:white;" class="whitetitle">요청 보낸 매칭</h3>
+                                              <div class="separator"></div>
+                                            </div>
+                                            <div class="darkmintbg3">
+                                              <div class="table-responsive">
+                                                <table  class="table table-hover thead-light">
+                                                  <thead>
+                                                  <tr>
+                                                    <th>보낸 사람</th>
+                                                    <th>보낸 시간</th>
+                                                    <th></th> <!-- 취소 -->
+                                                  </tr>
+                                                </thead>
+                                                <tbody id="sending_matching">
+                                                </tbody>
+                                                </table>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="single_tab_content">
+                                            <div class="head_title2">
+                                              <h3 style="color:white;" class="whitetitle">모든 요청 상황</h3>
+                                              <div class="separator"></div>
+                                            </div>
+                                            <div class="darkmintbg3">
+                                              <div class="table-responsive">
+                                                <table  class="table table-hover thead-light">
+                                                    <thead>
+                                                  <tr>
+                                                    <th>아이디</th>
+                                                    <th>보낸 시간</th>
+                                                    <th>상태</th> <!-- 수락 -->
+                                                    <th></th> <!-- 거절 -->
+                                                  </tr>
+                                                  </thead>
+                                                  <tbody id="all_matching">
+                                                  </tbody>
+                                                </table>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+
+
+
+
+
+
+<!--
+service 위에꺼 가져오기~-
+<section id="service" class="service">
+  <div class="mintbg">
+     <div class="container">
+         <div class="row">
+             <div class="col-sm-12">
+                 <div class="main_service_area">
+                     <div class="main_service_content">
+                         <div class="service_tabe">
+                             Nav tabs
+                             <ul class="service_tabe_menu nav nav-tabs" role="tablist">
+                                 <li role="presentation" class="active"><a href="" aria-controls="webdesign" role="tab" data-toggle="tab"><i class="fa fa-envelope"></i> <br />요청 받은 매칭</a></li>
+                                 <li role="presentation"><a href="" aria-controls="appdesign" role="tab" data-toggle="tab"><i class="fa fa-envelope"></i> <br />요청 보낸 매칭</a></li>
+                                 <li role="presentation"><a href="" aria-controls="graphicdesign" role="tab" data-toggle="tab"><i class="fa fa-envelope"></i> <br />모든 요청 상황</a></li>
+                             </ul>
+
+                             Tab panes
+                             <div class="tab-content">
+                                 <div role="tabpanel" class="tab-pane active" id="webdesign">
+                                     <div class="single_service_tab">
+                                       <div class="matchingwrap">
+                                         <div class="">
+                                             <div class=""><column으로 쟤네 가져오기~
+                                               <table id="received_matching" class="tablewrap" cellpadding="3">
+                                                 <tr>
+                                                   <th>보낸 사람</th>
+                                                   <th>보낸 시간</th>
+                                                   <th></th> <!- 수락
+                                                   <th></th> <!- 거절
+                                                 </tr>
+                                               </table>
+                                             </div>
+                                             <div class=""><!-column으로 쟤네 가져오기~-
+                                               <table id="sending_matching" class="tablewrap" cellpadding="3">
+                                                 <tr>
+                                                   <th>받는 사람</th>
+                                                   <th>보낸 시간</th>
+                                                   <th></th> <! 취소
+                                                 </tr>
+                                               </table>
+                                             </div>
+                                             <div class=""><!column으로 쟤네 가져오기~
+                                               <table id = "all_matching" class="tablewrap" cellpadding="3">
+                                                 <thead>
+                                                   <th>아이디</th>
+                                                   <th>보낸 시간</th>
+                                                   <th>상태</th>
+                                                   <th></th>
+                                                 </thead>
+                                                 <tbody id = 'all_match' cellpadding="3">
+
+                                                 </tbody>
+                                               </table>
+                                             </div>
+                                           </div>
+
+                                         </div>
+                                     </div>
+                                 </div>
+
+
+
+                             </div> <!tab-content -
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div> <! row 끝 -
+     </div>
+   </div>
+ </section>-->
+
+
+
+
+    <section class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="main_footer">
+                        <div class="row">
+
+                            <div class="col-sm-6 col-xs-12">
+                                <div class="copyright_text">
+                                    <p style="font-size:15px;" class=" wow fadeInRight" data-wow-duration="1s">Made with <i class="fa fa-heart"></i> by  Snoopy Yeju_☆</p>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-xs-12">
+                                <div class="flowus">
+                                    <img src="images2/snoopyface.png"/>
+                                    <img src="images2/snoopyface2.png"/>
+                                    <img src="images2/snoopyface3.png"/>
+                                    <img src="images2/snoopyface4.png"/>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+   </div>
+
+
+
+   <!-- START SCROLL TO TOP  -->
+
+   <div class="scrollup">
+   <a href="#"><i class="fa fa-chevron-up"></i></a>
+   </div>
+
+
+
+   <script>
+
+   $(window).scroll(function () {
+   var top = $(document).scrollTop();
+   var height = 300;
+   //alert(batas);
+
+   if (top > height) {
+   $('.navbar-fixed-top').addClass('menu-scroll');
+   } else {
+   $('.navbar-fixed-top').removeClass('menu-scroll');
+   }
+   });
+   </script>
+
+
+
+    <script src="/javascripts/customer.js"></script>
+
+  </body>
+</html>

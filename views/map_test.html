@@ -1,0 +1,260 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>지도</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=THc0oeRU7cNG_sCjsieS"></script>
+</head>
+<body>
+
+<div id="map" style="width:100%;height:400px;">
+
+</div>
+
+<div class="serach">
+  <input id="address" type="text" value="안암로 145" name="address" />
+  <input type="button" id="submit" value="주소검색"/>
+</div>
+
+
+<script>
+// var mapOptions = {
+//     center: new naver.maps.LatLng(37.3595704, 127.105399),
+//     zoom: 11
+// };
+//
+// var map = new naver.maps.Map('map', mapOptions);
+var map = new naver.maps.Map("map", {
+    center: new naver.maps.LatLng(37.5900122, 127.0318318),
+    zoom: 11,
+    scaleControl: false,
+
+
+    zoomControl: true,
+    minZoom: 1,
+    mapTypeControl: true
+
+});
+var position=new naver.maps.LatLng(37.5900122, 127.0318318);
+var marker = new naver.maps.Marker({
+    position: position,
+    map: map
+});
+var infoWindow = new naver.maps.InfoWindow({
+    anchorSkew: true
+});
+
+map.setCursor('pointer');
+
+// search by tm128 coordinate
+naver.maps.Event.addListener(map, 'click', function(e) {
+    marker.setPosition(e.coord);
+});
+function searchCoordinateToAddress(latlng) {
+    var tm128 = naver.maps.TransCoord.fromLatLngToTM128(latlng);
+
+    infoWindow.close();
+
+    naver.maps.Service.reverseGeocode({
+        location: tm128,
+        coordType: naver.maps.Service.CoordType.TM128
+    }, function(status, response) {
+        if (status === naver.maps.Service.Status.ERROR) {
+            return alert('Something Wrong!');
+        }
+
+        var items = response.result.items,
+            htmlAddresses = [];
+
+        for (var i=0, ii=items.length, item, addrType; i<ii; i++) {
+            item = items[i];
+            addrType = item.isRoadAddress ? '[도로명 주소]' : '[지번 주소]';
+
+            htmlAddresses.push((i+1) +'. '+ addrType +' '+ item.address);
+        }
+
+        infoWindow.setContent([
+                '<div style="padding:10px;min-width:200px;line-height:150%;">',
+                '<h4 style="margin-top:5px;">검색 좌표</h4><br />',
+                htmlAddresses.join('<br />'),
+                '</div>'
+            ].join('\n'));
+
+        infoWindow.open(map, latlng);
+    });
+}
+
+// result by latlng coordinate
+function searchAddressToCoordinate(address) {
+    naver.maps.Service.geocode({
+        address: address
+    }, function(status, response) {
+        if (status === naver.maps.Service.Status.ERROR) {
+            return alert('Something Wrong!');
+        }
+
+        var item = response.result.items[0],
+            addrType = item.isRoadAddress ? '[도로명 주소]' : '[지번 주소]',
+            point = new naver.maps.Point(item.point.x, item.point.y);
+
+        infoWindow.setContent([
+                '<div style="padding:10px;min-width:200px;line-height:150%;">',
+                '<h4 style="margin-top:5px;">검색 주소 : '+ response.result.userquery +'</h4><br />',
+                addrType +' '+ item.address +'<br />',
+                '</div>'
+            ].join('\n'));
+
+
+        map.setCenter(point);
+        infoWindow.open(map, point);
+    });
+}
+
+function initGeocoder() {
+    map.addListener('click', function(e) {
+        searchCoordinateToAddress(e.coord);
+    });
+
+
+    $('#address').on('keydown', function(e) {
+        var keyCode = e.which;
+
+        if (keyCode === 13) { // Enter Key
+            searchAddressToCoordinate($('#address').val());
+        }
+    });
+
+    $('#submit').on('click', function(e) {
+        e.preventDefault();
+
+        searchAddressToCoordinate($('#address').val());
+    });
+
+    searchAddressToCoordinate('안암로 145');
+}
+
+
+naver.maps.onJSContentLoaded = initGeocoder();
+</script>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>주소로 장소 표시하기</title>
+
+</head>
+<body>
+<!-- <p style="margin-top:-12px">
+    <em class="link">
+        <a href="javascript:void(0);" onclick="window.open('http://fiy.daum.net/fiy/map/CsGeneral.daum', '_blank', 'width=981, height=650')">
+            혹시 주소 결과가 잘못 나오는 경우에는 여기에 제보해주세요.
+        </a>
+    </em>
+</p> -->
+<div id="map" style="width:100%;height:350px;"></div>
+<div class="serach">
+  <input id="address" type="text" value="안암로 145" name="address" />
+  <input type="button" id="submit" onclick="geocoder.addressSearch(address.value, search);" value="주소검색"/>
+</div>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f13fcce484a14f41df4a0e09e7059d46&libraries=services"></script>
+<script>
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+    mapOption = {
+        center: new daum.maps.LatLng(37.5900122, 127.0318318), // 지도의 중심좌표
+        level: 4 // 지도의 확대 레벨
+    };
+
+// 지도를 생성합니다
+var map = new daum.maps.Map(mapContainer, mapOption);
+var position=new daum.maps.LatLng(37.5900122, 127.0318318);
+
+// var marker = new daum.maps.Marker({
+//           position: position, // 마커의 좌표
+//           draggable : true, // 마커를 드래그 가능하도록 설정한다
+//           map: map // 마커를 표시할 지도 객체
+//       });
+// 주소-좌표 변환 객체를 생성합니다
+var geocoder = new daum.maps.services.Geocoder();
+// 지도 타입 변경 컨트롤을 생성한다
+var mapTypeControl = new daum.maps.MapTypeControl();
+
+      // 지도의 상단 우측에 지도 타입 변경 컨트롤을 추가한다
+map.addControl(mapTypeControl, daum.maps.ControlPosition.TOPRIGHT);
+
+      // 지도에 확대 축소 컨트롤을 생성한다
+var zoomControl = new daum.maps.ZoomControl();
+
+      // 지도의 우측에 확대 축소 컨트롤을 추가한다
+map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
+
+// 주소로 좌표를 검색합니다
+var search=function(result, status) {
+
+    // 정상적으로 검색이 완료됐으면
+     if (status === daum.maps.services.Status.OK) {
+
+        var coords = new daum.maps.LatLng(result[0].y, result[0].x);
+
+        // 결과값으로 받은 위치를 마커로 표시합니다
+        var marker = new daum.maps.Marker({
+            map: map,
+            draggable : true,
+            position: coords
+        });
+        position=coords;
+
+        // 인포윈도우로 장소에 대한 설명을 표시합니다
+        var infowindow = new daum.maps.InfoWindow({
+            content: '<div style="width:150px;text-align:center;padding:6px 0;">House</div>'
+        });
+        infowindow.open(map, marker);
+
+        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+        map.setCenter(coords);
+    }};
+// geocoder.addressSearch('안암로 145', function(result, status) {
+//
+//     // 정상적으로 검색이 완료됐으면
+//      if (status === daum.maps.services.Status.OK) {
+//
+//         var coords = new daum.maps.LatLng(result[0].y, result[0].x);
+//         if(coords!=position){
+//           position=coords;
+//         }
+//         // 결과값으로 받은 위치를 마커로 표시합니다
+//         var marker = new daum.maps.Marker({
+//             map: map,
+//
+//             position: coords
+//         });
+//
+//         // 인포윈도우로 장소에 대한 설명을 표시합니다
+//         var infowindow = new daum.maps.InfoWindow({
+//             content: '<div style="width:150px;text-align:center;padding:6px 0;">우리회사</div>'
+//         });
+//         infowindow.open(map, marker);
+//
+//         // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+//         map.setCenter(coords);
+//     }
+// });
+
+
+// daum.maps.event.addListener(map, 'click', function(e) {
+//   var latlng = e.latLng;
+//
+//    // 마커 위치를 클릭한 위치로 옮깁니다
+//    marker.setPosition(latlng);
+// });
+
+
+</script>
+</body>
+</html>
